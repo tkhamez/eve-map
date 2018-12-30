@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <title>Map</title>
+</head>
+<body>
+    <div class="controls">
+        <label><input type="checkbox" id="showSystems" checked> Systems</label><br>
+        <label><input type="checkbox" id="showGates">Gates</label><br>
+        <br>
+
+        <input name="focus" type="text" style="width: 70px" placeholder="system" value="S25C-K">
+        <button onclick="focusSystem()">focus</button><br>
+        <br>
+
+        Route<br>
+        <input name="route-from" type="text" style="width: 70px" placeholder="from" value="U-QVWD"><br>
+        <input name="route-to" type="text" style="width: 70px" placeholder="to" value="IRE-98"><br>
+        <input name="route-range" type="text" style="width: 70px" placeholder="max range" value="6"><br>
+        <button onclick="calculateRoute()">calculate</button><br>
+        <span id="route"></span><br>
+        <br>
+
+    </div>
+    <div class="map" id="map"></div>
+</body>
+</html>
