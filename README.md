@@ -5,14 +5,14 @@ Demo https://eve-map-3d.herokuapp.com/
 
 `npm i`
 
-This also generates data files and builds the app (postinstall).
-
 ### Generate data files
 
 ```
 node src/js/cli/build-map.js
 node src/js/cli/build-graph.js
 ```
+
+or just `npm postinstall`
 
 ### Run dev server
 

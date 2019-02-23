@@ -7,8 +7,9 @@
     "test": "mocha --reporter list",
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "postinstall": "node src/js/cli/build-map.js; node src/js/cli/build-graph.js; npm run build"
+    "postinstall": "node src/js/cli/build-map.js; node src/js/cli/build-graph.js"
   },
+  "heroku-run-build-script": true,
   "author": "",
   "license": "ISC",
   "dependencies": {

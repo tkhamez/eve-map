@@ -109,7 +109,6 @@ const Map = {
     },
 
     showRoute: function(route) {
-        // TODO remove old
         for (let routeObject of routeObjects) {
             scene.remove(routeObject);
         }
