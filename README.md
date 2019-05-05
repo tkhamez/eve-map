@@ -12,7 +12,7 @@ node src/js/cli/build-map.js
 node src/js/cli/build-graph.js
 ```
 
-or just `npm postinstall`
+or just `npm run postinstall`
 
 ### Run dev server
 
