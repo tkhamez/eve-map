@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const WriteFileWebpackPlugin = require('write-file-webpack-plugin');
 const Fiber = require('fibers');
@@ -17,7 +17,9 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "[name].[chunkhash].css",
         }),
-        new CleanWebpackPlugin(['dist/*.css', 'dist/*.js']),
+        new CleanWebpackPlugin({
+            cleanOnceBeforeBuildPatterns: ['*.css', '*.js'],
+        }),
         new CopyWebpackPlugin([
             {from: 'node_modules/three/examples/fonts/*.json', to: 'fonts', flatten: true }
         ]),
