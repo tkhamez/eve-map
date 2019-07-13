@@ -1,3 +1,6 @@
+/**
+ * https://github.com/tkhamez/eve-map
+ */
 
 var Route = (function() {
     'use strict';
