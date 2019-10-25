@@ -25,7 +25,7 @@ function buildGraph() {
         let security;
         if (system.securityStatus > 0 && system.securityStatus < 0.05) {
             security = 0.1;
-        } else if (system.securityStatus <= 0.0){
+        } else if (system.securityStatus <= 0.0) {
             security = Math.round(system.securityStatus * 100) / 100;
         } else {
             security = Math.round(system.securityStatus * 10) / 10;
