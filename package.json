@@ -14,7 +14,6 @@
   "license": "ISC",
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
-    "node-fetch": "^2.6.0",
     "serve": "^11.1.0",
     "three": "^0.106.2",
     "whatwg-fetch": "^3.0.0"

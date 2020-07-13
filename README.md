@@ -24,19 +24,6 @@ or just `npm run postinstall`
 
 `npm run build`
 
-### Regenerate ESI data
-
-Delete existing files from `data/esi`.
-
-Fetch regions:
-
-`node src/js/cli/fetch-regions.js`
-
-Fetch constellations, systems and stargates (it processes one region after the other, 
-repeat it until it ends without an error):
-
-`node src/js/cli/fetch-systems.js`
-
 ### Console
 
 Route calculation, example:

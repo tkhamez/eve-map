@@ -40,7 +40,7 @@ const EsiData = {
      * @param {string} [constellationName] additionally limit to one constellation
      */
     readData: function(regionName, constellationName) {
-        const regionsData = JSON.parse(fs.readFileSync("data/esi/regions.json", "utf8"));
+        const regionsData = JSON.parse(fs.readFileSync("eve-esi-data/json/universe/regions/regions.json", "utf8"));
         for (let regionData of regionsData) {
             if (this.regionBlackList.indexOf(regionData.name) !== -1) {
                 continue;
@@ -58,7 +58,10 @@ const EsiData = {
                 regionData.constellations,
             ));
 
-            const constellationsData = fs.readFileSync("data/esi/" + regionData.name + "-constellations.json", "utf8");
+            const constellationsData = fs.readFileSync(
+                "eve-esi-data/json/universe/constellations/" + regionData.name + "-constellations.json",
+                "utf8"
+            );
             for (let constellationData of JSON.parse(constellationsData)) {
                 if (constellationName && constellationName !== constellationData.name) {
                     continue;
@@ -75,7 +78,10 @@ const EsiData = {
                 ));
             }
 
-            const systemsData = fs.readFileSync("data/esi/" + regionData.name + "-systems.json", "utf8");
+            const systemsData = fs.readFileSync(
+                "eve-esi-data/json/universe/systems/" + regionData.name + "-systems.json",
+                "utf8"
+            );
             for (let systemData of JSON.parse(systemsData)) {
                 if (constellationName && this.constellations[0].systems.indexOf(systemData.id) === -1) {
                     continue;
@@ -93,7 +99,10 @@ const EsiData = {
                 ));
             }
 
-            const stargatesData = fs.readFileSync("data/esi/" + regionData.name + "-stargates.json", "utf8");
+            const stargatesData = fs.readFileSync(
+                "eve-esi-data/json/universe/stargates/" + regionData.name + "-stargates.json",
+                "utf8"
+            );
             for (let stargateData of JSON.parse(stargatesData)) {
                 if (constellationName) {
                     let skip = true;

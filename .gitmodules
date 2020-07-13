@@ -1,0 +1,3 @@
+[submodule "eve-esi-data"]
+	path = eve-esi-data
+	url = https://github.com/tkhamez/eve-esi-data.git
