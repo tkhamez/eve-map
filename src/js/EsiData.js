@@ -40,7 +40,7 @@ const EsiData = {
      * @param {string} [constellationName] additionally limit to one constellation
      */
     readData: function(regionName, constellationName) {
-        const regionsData = JSON.parse(fs.readFileSync("eve-esi-data/json/universe/regions/regions.json", "utf8"));
+        const regionsData = JSON.parse(fs.readFileSync("esi-data/json/universe/regions/regions.json", "utf8"));
         for (let regionData of regionsData) {
             if (this.regionBlackList.indexOf(regionData.name) !== -1) {
                 continue;
@@ -59,7 +59,7 @@ const EsiData = {
             ));
 
             const constellationsData = fs.readFileSync(
-                "eve-esi-data/json/universe/constellations/" + regionData.name + "-constellations.json",
+                "esi-data/json/universe/constellations/" + regionData.name + "-constellations.json",
                 "utf8"
             );
             for (let constellationData of JSON.parse(constellationsData)) {
@@ -79,7 +79,7 @@ const EsiData = {
             }
 
             const systemsData = fs.readFileSync(
-                "eve-esi-data/json/universe/systems/" + regionData.name + "-systems.json",
+                "esi-data/json/universe/systems/" + regionData.name + "-systems.json",
                 "utf8"
             );
             for (let systemData of JSON.parse(systemsData)) {
@@ -100,7 +100,7 @@ const EsiData = {
             }
 
             const stargatesData = fs.readFileSync(
-                "eve-esi-data/json/universe/stargates/" + regionData.name + "-stargates.json",
+                "esi-data/json/universe/stargates/" + regionData.name + "-stargates.json",
                 "utf8"
             );
             for (let stargateData of JSON.parse(stargatesData)) {
