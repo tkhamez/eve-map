@@ -53,9 +53,9 @@ function findDestinations(system) {
         if (system.stargates.indexOf(stargate.id) === -1) {
             continue;
         }
-        for (let system of EsiData.systems) {
-            if (system.id === stargate.destination.systemId) {
-                destinations.push(system.name);
+        for (let esiSystem of EsiData.systems) {
+            if (esiSystem.id === stargate.destination.systemId) {
+                destinations.push(esiSystem.name);
                 break;
             }
         }
