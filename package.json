@@ -9,7 +9,6 @@
     "build": "webpack --config webpack.prod.js",
     "postinstall": "node src/js/cli/build-map.js; node src/js/cli/build-graph.js"
   },
-  "heroku-run-build-script": true,
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -39,7 +38,7 @@
     "write-file-webpack-plugin": "^4.5.0"
   },
   "engines": {
-    "node": "12.13.0",
-    "npm": "6.12.0"
+    "node": "12",
+    "npm": "8"
   }
 }
