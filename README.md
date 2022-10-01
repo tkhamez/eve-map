@@ -1,11 +1,14 @@
+# EVE Map
 
-## A simple jump route calculator with a 3D map for EVE Online.
+A simple jump route calculator with a 3D map for EVE Online.
 
-### Install
+![Screenshot](eve-map.png)
+
+## Install
 
 `npm i`
 
-### Generate data files
+## Generate data files
 
 ```
 node src/js/cli/build-map.js
@@ -14,21 +17,21 @@ node src/js/cli/build-graph.js
 
 or just `npm run postinstall`
 
-### Run dev server
+## Run dev server
 
 `npm start`
 
-### Build distribution
+## Build distribution
 
 `npm run build`
 
-### Console
+## Console
 
 Route calculation, example:
 
 `node src/js/cli/route.js U-QVWD IRE-98 6`
 
-### Browser
+## Browser
 
 `Route.js` can also be used directly in a web browser, it only needs the
 data from `graph.json` (see above).
