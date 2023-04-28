@@ -11,13 +11,14 @@ var Route = (function() {
      * @returns {number|null}
      */
     function calculateDistance(systemA, systemB) {
-        var lightYear = 9460730472580800; // metres
+        var ccpLightYear = 9460000000000000; // metres
+
         var distance = Math.sqrt(
             Math.pow(systemB.x - systemA.x, 2) +
             Math.pow(systemB.y - systemA.y, 2) +
             Math.pow(systemB.z - systemA.z, 2)
         );
-        return Math.round((distance / lightYear) * 1000) / 1000;
+        return Math.round((distance / ccpLightYear) * 1000) / 1000;
     }
 
     /**
