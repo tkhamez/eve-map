@@ -6,30 +6,53 @@ A simple jump route calculator with a 3D map for EVE Online.
 
 ## Install
 
-`npm i`
+```
+npm install
 
-## Generate data files
+# or with Docker:
+docker run -v $PWD:/app node:12-slim /bin/sh -c "cd /app; npm install"
+```
 
+Generate data files (in dist/data):
 ```
 node src/js/cli/build-map.js
 node src/js/cli/build-graph.js
-```
 
-or just `npm run postinstall`
+# or with Docker:
+docker run -v $PWD:/app node:12-slim /bin/sh -c "cd /app; node src/js/cli/build-map.js"
+docker run -v $PWD:/app node:12-slim /bin/sh -c "cd /app; node src/js/cli/build-graph.js"
+```
 
 ## Run dev server
 
-`npm start`
+```
+npm start
+
+# or with Docker:
+docker run -it -v $PWD:/app -p 127.0.0.1:8080:8080 node:12-slim /bin/sh
+cd /app
+npm start
+```
 
 ## Build distribution
 
-`npm run build`
+```
+npm run build
+
+# or with Docker:
+docker run -v $PWD:/app node:12-slim /bin/sh -c "cd /app; npm run build"
+```
 
 ## Console
 
 Route calculation, example:
 
-`node src/js/cli/route.js U-QVWD IRE-98 6`
+```
+node src/js/cli/route.js U-QVWD IRE-98 6
+
+# or with Docker:
+docker run -v $PWD:/app node:12-slim /bin/sh -c "cd /app; node src/js/cli/route.js U-QVWD IRE-98 6"
+```
 
 ## Browser
 
