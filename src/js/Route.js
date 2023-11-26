@@ -68,7 +68,7 @@ var Route = (function() {
          */
         findSystem: function(name) {
             for (var i = 0; i < this.graph.length; i++) {
-                if (this.graph[i].name === name) {
+                if (this.graph[i].name.toLowerCase() === name.toLowerCase()) {
                     return this.graph[i];
                 }
             }
