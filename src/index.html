@@ -3,12 +3,27 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-    <title>Map</title>
+    <title>EVE-Map</title>
 </head>
 <body>
     <div class="controls">
-        <label><input type="checkbox" id="showSystems" checked> Systems</label><br>
-        <label><input type="checkbox" id="showGates">Gates</label><br>
+        <h1>EVE-Map</h1>
+        <h5>Jump Route Calculator</h5>
+
+        Show<br>
+        <small>
+            <label><input type="checkbox" id="showSystems" checked> Systems</label><br>
+            <label><input type="checkbox" id="showGates"> Gates</label><br>
+        </small>
+        <br>
+
+        Map control<br>
+        <small>
+            Hold left mouse = rotate<br>
+            Hold right mouse = drag<br>
+            Scroll wheel = zoom<br>
+            Left-click system = focus<br>
+        </small>
         <br>
 
         <input name="focus" type="text" style="width: 70px" placeholder="system" value="S25C-K">
@@ -23,6 +38,8 @@
         <span id="route"></span><br>
         <br>
 
+        <br>
+        <small><a href="https://github.com/tkhamez/eve-map" target="_blank">GitHub</a></small>
     </div>
     <div class="map" id="map"></div>
 </body>
