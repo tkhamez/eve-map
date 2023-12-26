@@ -5,8 +5,8 @@ const SolarSystem = require('../models/SolarSystem.js');
 
 const EsiData = require("../EsiData.js");
 
-// exclude Jove systems
-EsiData.regionBlackList.push('A821-A', 'J7HZ-F', 'UUA-F4');
+// Exclude Jove and Pochven systems
+EsiData.regionBlackList.push('A821-A', 'J7HZ-F', 'UUA-F4', 'Pochven');
 
 EsiData.readData();
 //EsiData.readData('Catch');
