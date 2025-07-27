@@ -2,8 +2,6 @@
 
 A simple jump route calculator with a 3D map for EVE Online.
 
-Demo: https://eve-map.tian-space.net
-
 ![Screenshot](eve-map.png)
 
 ## Install
