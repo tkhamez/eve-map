@@ -14,9 +14,6 @@
     "three": "^0.184.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.27.1",
-    "@babel/preset-env": "^7.27.2",
-    "babel-loader": "^10.1.1",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^14.0.0",
     "css-loader": "^7.1.2",
@@ -25,8 +22,6 @@
     "mocha": "^11.2.2",
     "sass": "^1.88.0",
     "sass-loader": "^16.0.5",
-    "serve": "^14.2.6",
-    "style-loader": "^4.0.0",
     "webpack": "^5.106.2",
     "webpack-cli": "^7.0.2",
     "webpack-dev-server": "^5.2.2",
