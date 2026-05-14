@@ -1,5 +1,7 @@
 const THREE = window.THREE = require('three');
-require('three/examples/js/controls/OrbitControls');
+const { OrbitControls } = require('three/examples/jsm/controls/OrbitControls.js');
+const { FontLoader } = require('three/examples/jsm/loaders/FontLoader.js');
+const { TextGeometry } = require('three/examples/jsm/geometries/TextGeometry.js');
 
 let width, height;
 const cursor = { x: 0, y: 0 };
@@ -26,7 +28,7 @@ const Map = {
         camera = new THREE.PerspectiveCamera(45, width / height, 0.05, 50000);
         camera.position.set(0, 1500, 0);
 
-        controls = new THREE.OrbitControls(camera, this.container);
+        controls = new OrbitControls(camera, this.container);
         controls.zoomSpeed = 5.0; // 1.0 is default
         controls.update();
 
@@ -51,7 +53,7 @@ const Map = {
     },
 
     loadFonts: async function() {
-        const loader = new THREE.FontLoader();
+        const loader = new FontLoader();
         fonts.helvetiker_regular = await new Promise((resolve) => {
             loader.load('fonts/helvetiker_regular.typeface.json', function(font) {
                 resolve(font);
@@ -195,10 +197,10 @@ function highlight(node) {
 }
 
 function showName(node) {
-    const geometry = new THREE.TextGeometry(node.userData.name, {
+    const geometry = new TextGeometry(node.userData.name, {
         font: fonts.helvetiker_regular,
         size: 1,
-        height: 0.1
+        depth: 0.1
     });
 
     const textMaterial = new THREE.MeshBasicMaterial({ color: 0xffffff });
@@ -270,11 +272,12 @@ async function addEdges() {
 }
 
 function createLine(x1, y1, z1, x2, y2, z2, color, transparent) {
-    let geometry = new THREE.Geometry();
-    geometry.vertices.push(new THREE.Vector3(x1, y1, z1));
-    geometry.vertices.push(new THREE.Vector3(x2, y2, z2));
+    const geometry = new THREE.BufferGeometry().setFromPoints([
+        new THREE.Vector3(x1, y1, z1),
+        new THREE.Vector3(x2, y2, z2)
+    ]);
 
-    let material = new THREE.LineBasicMaterial({ color: color, opacity: 0 });
+    const material = new THREE.LineBasicMaterial({ color: color, opacity: 0 });
     material.transparent = transparent;
     const line = new THREE.Line(geometry, material);
     line.computeLineDistances();
