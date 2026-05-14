@@ -4,54 +4,44 @@ A simple jump route calculator with a 3D map for EVE Online.
 
 ![Screenshot](eve-map.png)
 
-## Install
+## Run
 
+First start a Docker container:
+
+```bash
+docker run -it -v $PWD:/app -p 127.0.0.1:8080:8080 -w /app node:24-slim bash
 ```
-npm install
 
-# or with Docker:
-docker run -v $PWD:/app node:12-slim /bin/sh -c "cd /app; npm install"
+### Install
+
+```bash
+npm ci
 ```
 
 Generate data files (in dist/data):
-```
+```bash
 node src/js/cli/build-map.js
 node src/js/cli/build-graph.js
-
-# or with Docker:
-docker run -v $PWD:/app node:12-slim /bin/sh -c "cd /app; node src/js/cli/build-map.js"
-docker run -v $PWD:/app node:12-slim /bin/sh -c "cd /app; node src/js/cli/build-graph.js"
 ```
 
-## Run dev server
+### Run dev server
 
-```
-npm start
-
-# or with Docker:
-docker run -it -v $PWD:/app -p 127.0.0.1:8080:8080 node:12-slim /bin/sh
-cd /app
+```bash
 npm start
 ```
 
-## Build distribution
+### Build distribution
 
-```
+```bash
 npm run build
-
-# or with Docker:
-docker run -v $PWD:/app node:12-slim /bin/sh -c "cd /app; npm run build"
 ```
 
-## Console
+### Console
 
 Route calculation, example:
 
-```
+```bash
 node src/js/cli/route.js U-QVWD IRE-98 6
-
-# or with Docker:
-docker run -v $PWD:/app node:12-slim /bin/sh -c "cd /app; node src/js/cli/route.js U-QVWD IRE-98 6"
 ```
 
 ## Browser

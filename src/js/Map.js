@@ -1,4 +1,3 @@
-require("whatwg-fetch");
 const THREE = window.THREE = require('three');
 require('three/examples/js/controls/OrbitControls');
 

@@ -3,8 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const WriteFileWebpackPlugin = require('write-file-webpack-plugin');
-const Fiber = require('fibers');
 
 module.exports = {
     entry: {
@@ -15,20 +13,22 @@ module.exports = {
             template: './src/index.html'
         }),
         new MiniCssExtractPlugin({
-            filename: "[name].[chunkhash].css",
+            filename: "[name].[contenthash].css",
         }),
         new CleanWebpackPlugin({
             cleanOnceBeforeBuildPatterns: ['*.css', '*.js'],
         }),
-        new CopyWebpackPlugin([
-            {from: 'node_modules/three/examples/fonts/*.json', to: 'fonts', flatten: true }
-        ]),
-        new WriteFileWebpackPlugin({
-            test: /.json/
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: 'node_modules/three/examples/fonts/*.json',
+                    to: 'fonts/[name][ext]'
+                }
+            ]
         })
     ],
     output: {
-        filename: '[name].[chunkhash].js',
+        filename: '[name].[contenthash].js',
         path: path.resolve(__dirname, 'dist')
     },
     module: {
@@ -41,7 +41,6 @@ module.exports = {
                     loader: "sass-loader",
                     options: {
                         implementation: require("sass"),
-                        fiber: Fiber,
                     }
                 }
             ]

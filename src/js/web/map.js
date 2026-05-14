@@ -1,5 +1,3 @@
-import '@babel/polyfill';
-import { fetch } from 'whatwg-fetch';
 const Route = require("../Route.js");
 const Map = require("../Map.js");
 
